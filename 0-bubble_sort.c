@@ -6,8 +6,6 @@
  * bubble_sort - sort an array of integers in ascending order.
  * @array: AN array of integers to sort.
  * @size: The size of the array.
- *
- * Description: prints the array aftrer each swap.
  */
 
 void bubble_sort(int *array, size_t size)
