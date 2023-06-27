@@ -12,6 +12,9 @@ void shell_sort(int *array, size_t size)
 	size_t i, j;
 	int temp;
 
+	if (size < 2)
+		return;
+
 	/* Calculate the initial gap using Knuth sequence */
 	while (gap < size / 3)
 		gap = gap * 3 + 1;
