@@ -1,47 +1,31 @@
 #include "sort.h"
-
 /**
- * swap - it  is uses to swap two integers
- * @a: first to to be swap.
- * @b: second.
+ * bubble_sort - sort an array of integers in ascending order.
+ * @array: AN array of integers to sort.
+ * @size: The size of the array.
+ *
+ * Description: prints the array aftrer each swap.
  */
 
-void swap(int *a, int *b)
+void bubble_sort(int *array, size_t size)
 {
-        int temp = *a;
-        *a = *b;
-        *b = temp;
-}
 
-/**
- * selection_sort - a sorting algorithm
- * @array: the array to be sorted
- * @size: the size of the array
- */
+	size_t i;
+	for (i = 0; i < size-1; i++)
+	{
+		size_t j;
+		for (j = 0; j < size -1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				/*Swap array[j] and array[j + 1]*/
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 
-
-void selection_sort(int *array, size_t size)
-{
-        size_t i, j, min_idx, k;
-
-        for (i = 0; i < size; i++)
-        {
-                min_idx = i;
-                for (j = i + 1; j < size; j++)
-                {
-                        if (array[j] < array[min_idx])
-                        {
-                                min_idx = j;
-                        }
-                }
-
-                /*swap the minimum element with the first element  of the unsorted part*/
-                swap(&array[min_idx], &array[i]);
-
-                /*print the array after each swap (optional)*/
-                for (k = 0; k < size; k++)
-                        printf("%d ", array[k]);
-
-                printf("\n");
-        }
+				/*Print the array after each swap */
+				print_array(array, size);
+			}
+		}
+	}
 }
