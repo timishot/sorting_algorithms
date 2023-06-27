@@ -24,6 +24,7 @@ typedef struct listint_s
  * @size: Number of elements in @array
  */
 void print_array(const int *array, size_t size);
+
 /**
  * print_list - Prints a list of integers
  *
