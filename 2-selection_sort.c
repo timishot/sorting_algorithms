@@ -22,7 +22,7 @@ void swap(int *a, int *b)
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min_idx, k;
+	size_t i, j, min_idx;
 
 	for (i = 0; i < size; i++)
 	{
@@ -39,10 +39,10 @@ void selection_sort(int *array, size_t size)
 		swap(&array[min_idx], &array[i]);
 
 		/*print the array after each swap (optional)*/
-		for (k = 0; k < size; k++)
-			printf("%d ", array[k]);
 
-		printf("\n");
+		if (min_idx != i)
+			print_array(array, size);
+
 	}
 }
 
